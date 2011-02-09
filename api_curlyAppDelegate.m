@@ -10,7 +10,7 @@
 
 @implementation api_curlyAppDelegate
 
-@synthesize window, urlField, requestField, conDelegate;
+@synthesize window, urlField, requestView, conDelegate, apiVersionSelector;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	[self loadUserDefaults];
@@ -18,13 +18,13 @@
 
 - (void) updateUserDefaults {
 	[[NSUserDefaults standardUserDefaults] setObject:[urlField stringValue] forKey:@"requestUrl"];
-	[[NSUserDefaults standardUserDefaults] setObject:[requestField stringValue] forKey:@"requestXml"];
+	[[NSUserDefaults standardUserDefaults] setObject:[requestView string] forKey:@"requestXml"];
 	[conDelegate updateUserDefaults];
 }
 
 - (void) loadUserDefaults {
 	[urlField setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:@"requestUrl"]];
-	[requestField setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:@"requestXml"]];
+	[requestView setString:[[NSUserDefaults standardUserDefaults] stringForKey:@"requestXml"]];
 	[conDelegate loadUserDefaults];
 }
 
@@ -35,11 +35,15 @@
 	// Create the request.
 	NSMutableURLRequest *apiRequest = [[[NSMutableURLRequest alloc] init] autorelease];
 	NSURL *url = [NSURL URLWithString:[urlField stringValue]];
+	NSData *postData = [[requestView string] dataUsingEncoding:NSUTF8StringEncoding];
+	NSString *contentLength = [NSString stringWithFormat:@"%d", [postData length]];
+	
 	[apiRequest setURL:url];
 	[apiRequest setHTTPMethod:@"POST"];
-	// [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-	// [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-	// [request setHTTPBody:postData];
+	[apiRequest setValue:[self selectedApiVersion] forHTTPHeaderField:@"Accept"];
+	[apiRequest setValue:@"text/xml" forHTTPHeaderField:@"Content-Type"];
+	[apiRequest setValue:contentLength forHTTPHeaderField:@"Content-Length"];
+	[apiRequest setHTTPBody:postData];
 	[apiRequest setTimeoutInterval:10.0];
 	[apiRequest setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
 	
@@ -48,6 +52,19 @@
 	NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:apiRequest delegate:conDelegate];
 	
 	// [resultView insertText: string];
+}
+
+- (NSString*) selectedApiVersion {
+	NSString* versionString = @"";
+	switch ([apiVersionSelector indexOfSelectedItem]) {
+		case 0:
+			versionString = @"application/vnd.de.payback.v1+xml";
+			break;
+		case 1:
+			versionString = @"application/vnd.org.betterplace.v2+xml";
+			break;
+	}
+	return versionString;
 }
 
 @end
