@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'api_curly' target in the 'api_curly' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
