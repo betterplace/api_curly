@@ -10,7 +10,7 @@
 
 @implementation api_curlyAppDelegate
 
-@synthesize window, urlField, tokenField, requestField, resultView;
+@synthesize window, urlField, requestField, conDelegate;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	[self loadUserDefaults];
@@ -18,54 +18,36 @@
 
 - (void) updateUserDefaults {
 	[[NSUserDefaults standardUserDefaults] setObject:[urlField stringValue] forKey:@"requestUrl"];
-	[[NSUserDefaults standardUserDefaults] setObject:[tokenField stringValue] forKey:@"requestToken"];
 	[[NSUserDefaults standardUserDefaults] setObject:[requestField stringValue] forKey:@"requestXml"];
+	[conDelegate updateUserDefaults];
 }
 
 - (void) loadUserDefaults {
 	[urlField setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:@"requestUrl"]];
-	[tokenField setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:@"requestToken"]];
 	[requestField setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:@"requestXml"]];
+	[conDelegate loadUserDefaults];
 }
 
 - (void)sendRequest:(id)sender {
 	[self updateUserDefaults];
-	NSTask *task;
-    task = [[NSTask alloc] init];
-    [task setLaunchPath: @"/usr/bin/curl"];
+	[conDelegate clearResult:self];
 	
-    NSArray *arguments;
-    arguments = [NSArray arrayWithObjects:@"-v",
-				 @"-u", [tokenField stringValue],
-				 @"--data", [requestField stringValue], 
-				 @"-H", @"Content-Type: text/xml", 
-				 @"-H", @"Accept: application/vnd.de.payback.v1+xml",
-				 [urlField stringValue], nil
-				];
-    [task setArguments: arguments];
+	// Create the request.
+	NSMutableURLRequest *apiRequest = [[[NSMutableURLRequest alloc] init] autorelease];
+	NSURL *url = [NSURL URLWithString:[urlField stringValue]];
+	[apiRequest setURL:url];
+	[apiRequest setHTTPMethod:@"POST"];
+	// [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+	// [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	// [request setHTTPBody:postData];
+	[apiRequest setTimeoutInterval:10.0];
+	[apiRequest setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
 	
-    NSPipe *pipe;
-    pipe = [NSPipe pipe];
-    [task setStandardOutput: pipe];
+	// create the connection with the request
+	// and start loading the data
+	NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:apiRequest delegate:conDelegate];
 	
-    NSFileHandle *file;
-    file = [pipe fileHandleForReading];
-	
-    [task launch];
-	
-    NSData *data;
-    data = [file readDataToEndOfFile];
-	
-    NSString *string;
-    string = [[NSString alloc] initWithData: data
-								   encoding: NSUTF8StringEncoding];
-	[resultView insertText: string];
-	
-}
-
-- (void)clearResult:(id)sender
-{
-	[resultView setString:@""];
+	// [resultView insertText: string];
 }
 
 @end

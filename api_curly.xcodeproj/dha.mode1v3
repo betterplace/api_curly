@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -269,17 +267,19 @@
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>E3CDBCB01302D7AC0046DE8F</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
-									<integer>12</integer>
+									<integer>3</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 662}}</string>
+							<string>{{0, 0}, {186, 660}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -291,14 +291,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {203, 680}}</string>
+						<string>{{0, 0}, {203, 678}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>224 218 1125 721 0 0 1920 1058 </string>
+						<string>716 249 1125 719 0 0 1920 1058 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -309,12 +309,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>app_icon</string>
+								<string>api_curlyAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,16 +324,18 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>app_icon</string>
+										<string>api_curlyAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E3CDBCA112FC68840046DE8F</string>
+										<string>E3CDBD7F1302ECF20046DE8F</string>
 										<key>history</key>
 										<array>
-											<string>E3CDBC6D12FC5BE90046DE8F</string>
-											<string>E3CDBC7D12FC67230046DE8F</string>
-											<string>E3CDBC7E12FC67230046DE8F</string>
+											<string>E3CDBCB11302D7AC0046DE8F</string>
+											<string>E3CDBD491302E9EB0046DE8F</string>
+											<string>E3CDBD7C1302ECF20046DE8F</string>
+											<string>E3CDBD7D1302ECF20046DE8F</string>
+											<string>E3CDBD7E1302ECF20046DE8F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -343,14 +347,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {917, 494}}</string>
+								<string>{{0, 0}, {917, 492}}</string>
 								<key>RubberWindowFrame</key>
-								<string>224 218 1125 721 0 0 1920 1058 </string>
+								<string>716 249 1125 719 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>494pt</string>
+							<string>492pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -363,9 +367,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 499}, {917, 181}}</string>
+								<string>{{0, 497}, {917, 181}}</string>
 								<key>RubberWindowFrame</key>
-								<string>224 218 1125 721 0 0 1920 1058 </string>
+								<string>716 249 1125 719 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -529,16 +533,16 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E3CDBCA212FC68840046DE8F</string>
+		<string>E3CDBD801302ECF20046DE8F</string>
 		<string>E3CDBC4612FC4F710046DE8F</string>
 		<string>E3CDBC4712FC4F710046DE8F</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E3CDBC1D12F95CC00046DE8F</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/dha/Dropbox/Fun Projects/api_curly/api_curly.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>224 218 1125 721 0 0 1920 1058 </string>
+	<string>716 249 1125 719 0 0 1920 1058 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -630,7 +634,7 @@
 			<key>WindowToolGUID</key>
 			<string>E3CDBC1D12F95CC00046DE8F</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -872,6 +876,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -882,18 +888,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {650, 209}}</string>
+								<string>{{0, 0}, {654, 366}}</string>
 								<key>RubberWindowFrame</key>
-								<string>166 557 650 250 0 0 1920 1058 </string>
+								<string>171 264 654 407 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
 							<key>Proportion</key>
-							<string>209pt</string>
+							<string>366pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>209pt</string>
+					<string>366pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -913,11 +919,11 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>166 557 650 250 0 0 1920 1058 </string>
+			<string>171 264 654 407 0 0 1920 1058 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

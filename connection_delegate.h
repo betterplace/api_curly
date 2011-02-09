@@ -9,8 +9,25 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface connection_delegate : NSObject {
+@interface ConnectionDelegate : NSObject {
+	NSTextView *resultView;
+	NSTextField *tokenField;
+	NSTextField *userIdField;
 
 }
+
+@property (assign) IBOutlet NSTextView *resultView;
+@property (assign) IBOutlet NSTextField *userIdField;
+@property (assign) IBOutlet NSTextField *tokenField;
+
+- (void)clearResult:(id)sender;
+- (void) updateUserDefaults;
+- (void) loadUserDefaults;
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection;
+-(void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+
 
 @end
