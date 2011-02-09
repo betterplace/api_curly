@@ -31,6 +31,7 @@
 - (void)sendRequest:(id)sender {
 	[self updateUserDefaults];
 	[conDelegate clearResult:self];
+	[[conDelegate startButton] setEnabled:FALSE];
 	
 	// Create the request.
 	NSMutableURLRequest *apiRequest = [[[NSMutableURLRequest alloc] init] autorelease];
@@ -50,8 +51,10 @@
 	// create the connection with the request
 	// and start loading the data
 	NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:apiRequest delegate:conDelegate];
-	
-	// [resultView insertText: string];
+	if (!theConnection) {
+		[[conDelegate resultView] insertText:@"Error: Could not create URL connection...\n"];
+		[[conDelegate startButton] setEnabled:TRUE];
+	}
 }
 
 - (NSString*) selectedApiVersion {

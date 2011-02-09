@@ -11,7 +11,7 @@
 
 @implementation ConnectionDelegate
 
-@synthesize resultView, tokenField, userIdField;
+@synthesize resultView, tokenField, userIdField, startButton;
 
 - (void)clearResult:(id)sender
 {
@@ -63,6 +63,7 @@
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]];
 	[resultView insertText:message];
+	[startButton setEnabled:TRUE];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -71,6 +72,7 @@
 	
     // release the connection, and the data object
     [connection release];
+	[startButton setEnabled:TRUE];
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge

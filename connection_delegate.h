@@ -13,12 +13,13 @@
 	NSTextView *resultView;
 	NSTextField *tokenField;
 	NSTextField *userIdField;
-
+	NSButton *startButton;
 }
 
 @property (assign) IBOutlet NSTextView *resultView;
 @property (assign) IBOutlet NSTextField *userIdField;
 @property (assign) IBOutlet NSTextField *tokenField;
+@property (assign) IBOutlet NSButton *startButton;
 
 - (void)clearResult:(id)sender;
 - (void) updateUserDefaults;
