@@ -77,17 +77,33 @@
 
 -(void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
-    if ([challenge previousFailureCount] == 0) {
-        NSURLCredential *newCredential;
-        newCredential = [NSURLCredential credentialWithUser:[tokenField stringValue]
-												   password:[userIdField stringValue]
-												persistence:NSURLCredentialPersistenceNone];
-        [[challenge sender] useCredential:newCredential
-               forAuthenticationChallenge:challenge];
-    } else {
-		[resultView insertText:@"Cancelling Authentication request... token may be wrong.\n"];
-        [[challenge sender] cancelAuthenticationChallenge:challenge];
-    }
+	if ([challenge.protectionSpace.authenticationMethod
+		 isEqualToString:NSURLAuthenticationMethodServerTrust])
+	{
+		NSURLCredential *credential =
+		[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+		[challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
+	}
+	else 
+	{
+		if ([challenge previousFailureCount] == 0) {
+			NSURLCredential *newCredential;
+			newCredential = [NSURLCredential credentialWithUser:[tokenField stringValue]
+													   password:[userIdField stringValue]
+													persistence:NSURLCredentialPersistenceNone];
+			[[challenge sender] useCredential:newCredential
+				   forAuthenticationChallenge:challenge];
+		} else {
+			[resultView insertText:@"Cancelling Authentication request... token may be wrong.\n"];
+			[[challenge sender] continueWithoutCredentialForAuthenticationChallenge:challenge];
+		}
+	}
+}
+
+// to deal with self-signed certificates
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
+{
+	return ([protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust] || [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodDefault]);
 }
 
 @end
