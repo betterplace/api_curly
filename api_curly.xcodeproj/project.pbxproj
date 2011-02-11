@@ -8,21 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
-		256AC3DA0F4B6AC300CF3369 /* api_curlyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* api_curlyAppDelegate.m */; };
+		256AC3DA0F4B6AC300CF3369 /* ApiCurlyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ApiCurlyAppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E3CDBC7C12FC671C0046DE8F /* app_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E3CDBC7B12FC671C0046DE8F /* app_icon.icns */; };
-		E3CDBCAD1302D57D0046DE8F /* connection_delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CDBCAC1302D57D0046DE8F /* connection_delegate.m */; };
+		E3CDBCAD1302D57D0046DE8F /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CDBCAC1302D57D0046DE8F /* ConnectionDelegate.m */; };
+		E3CDBEB5130451390046DE8F /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3CDBEB4130451390046DE8F /* BWToolkitFramework.framework */; };
+		E3CDBEE61304513D0046DE8F /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3CDBEB4130451390046DE8F /* BWToolkitFramework.framework */; };
+		E3CDBF0213045AF40046DE8F /* ServicePanelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CDBF0113045AF40046DE8F /* ServicePanelDelegate.m */; };
+		E3CDBF3313059FE20046DE8F /* ProjectDetailsPresetController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CDBF3213059FE20046DE8F /* ProjectDetailsPresetController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E3CDBE941304460B0046DE8F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E3CDBEE61304513D0046DE8F /* BWToolkitFramework.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		256AC3D80F4B6AC300CF3369 /* api_curlyAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = api_curlyAppDelegate.h; sourceTree = "<group>"; };
-		256AC3D90F4B6AC300CF3369 /* api_curlyAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = api_curlyAppDelegate.m; sourceTree = "<group>"; };
+		256AC3D80F4B6AC300CF3369 /* ApiCurlyAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiCurlyAppDelegate.h; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* ApiCurlyAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiCurlyAppDelegate.m; sourceTree = "<group>"; };
 		256AC3F00F4B6AF500CF3369 /* api_curly_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = api_curly_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -30,8 +47,13 @@
 		8D1107310486CEB800E47090 /* api_curly-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "api_curly-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* api_curly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = api_curly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3CDBC7B12FC671C0046DE8F /* app_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = app_icon.icns; sourceTree = "<group>"; };
-		E3CDBCAB1302D57C0046DE8F /* connection_delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = connection_delegate.h; sourceTree = "<group>"; };
-		E3CDBCAC1302D57D0046DE8F /* connection_delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = connection_delegate.m; sourceTree = "<group>"; };
+		E3CDBCAB1302D57C0046DE8F /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
+		E3CDBCAC1302D57D0046DE8F /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDelegate.m; sourceTree = "<group>"; };
+		E3CDBEB4130451390046DE8F /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = "/Users/dha/Dropbox/Fun Projects/BWToolkit/BWToolkitFramework.framework"; sourceTree = "<absolute>"; };
+		E3CDBF0013045AF40046DE8F /* ServicePanelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicePanelDelegate.h; sourceTree = "<group>"; };
+		E3CDBF0113045AF40046DE8F /* ServicePanelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicePanelDelegate.m; sourceTree = "<group>"; };
+		E3CDBF3113059FE20046DE8F /* ProjectDetailsPresetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailsPresetController.h; sourceTree = "<group>"; };
+		E3CDBF3213059FE20046DE8F /* ProjectDetailsPresetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailsPresetController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				E3CDBEB5130451390046DE8F /* BWToolkitFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,10 +72,14 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				256AC3D80F4B6AC300CF3369 /* api_curlyAppDelegate.h */,
-				256AC3D90F4B6AC300CF3369 /* api_curlyAppDelegate.m */,
-				E3CDBCAB1302D57C0046DE8F /* connection_delegate.h */,
-				E3CDBCAC1302D57D0046DE8F /* connection_delegate.m */,
+				256AC3D80F4B6AC300CF3369 /* ApiCurlyAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* ApiCurlyAppDelegate.m */,
+				E3CDBCAB1302D57C0046DE8F /* ConnectionDelegate.h */,
+				E3CDBCAC1302D57D0046DE8F /* ConnectionDelegate.m */,
+				E3CDBF0013045AF40046DE8F /* ServicePanelDelegate.h */,
+				E3CDBF0113045AF40046DE8F /* ServicePanelDelegate.m */,
+				E3CDBF3113059FE20046DE8F /* ProjectDetailsPresetController.h */,
+				E3CDBF3213059FE20046DE8F /* ProjectDetailsPresetController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -61,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				E3CDBEB4130451390046DE8F /* BWToolkitFramework.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -134,6 +162,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				E3CDBE941304460B0046DE8F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -188,8 +217,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				256AC3DA0F4B6AC300CF3369 /* api_curlyAppDelegate.m in Sources */,
-				E3CDBCAD1302D57D0046DE8F /* connection_delegate.m in Sources */,
+				256AC3DA0F4B6AC300CF3369 /* ApiCurlyAppDelegate.m in Sources */,
+				E3CDBCAD1302D57D0046DE8F /* ConnectionDelegate.m in Sources */,
+				E3CDBF0213045AF40046DE8F /* ServicePanelDelegate.m in Sources */,
+				E3CDBF3313059FE20046DE8F /* ProjectDetailsPresetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +251,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../BWToolkit\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -237,6 +272,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../BWToolkit\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = api_curly_Prefix.pch;
