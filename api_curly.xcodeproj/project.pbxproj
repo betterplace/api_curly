@@ -12,6 +12,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E3ACC279132A638700D2103E /* ProjectListPresetsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ACC278132A638700D2103E /* ProjectListPresetsController.m */; };
 		E3CDBC7C12FC671C0046DE8F /* app_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E3CDBC7B12FC671C0046DE8F /* app_icon.icns */; };
 		E3CDBCAD1302D57D0046DE8F /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CDBCAC1302D57D0046DE8F /* ConnectionDelegate.m */; };
 		E3CDBEB5130451390046DE8F /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3CDBEB4130451390046DE8F /* BWToolkitFramework.framework */; };
@@ -46,6 +47,8 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* api_curly-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "api_curly-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* api_curly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = api_curly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3ACC277132A638700D2103E /* ProjectListPresetsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectListPresetsController.h; sourceTree = "<group>"; };
+		E3ACC278132A638700D2103E /* ProjectListPresetsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectListPresetsController.m; sourceTree = "<group>"; };
 		E3CDBC7B12FC671C0046DE8F /* app_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = app_icon.icns; sourceTree = "<group>"; };
 		E3CDBCAB1302D57C0046DE8F /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
 		E3CDBCAC1302D57D0046DE8F /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 				E3CDBF0113045AF40046DE8F /* ServicePanelDelegate.m */,
 				E3CDBF3113059FE20046DE8F /* ProjectDetailsPresetController.h */,
 				E3CDBF3213059FE20046DE8F /* ProjectDetailsPresetController.m */,
+				E3ACC277132A638700D2103E /* ProjectListPresetsController.h */,
+				E3ACC278132A638700D2103E /* ProjectListPresetsController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				E3CDBCAD1302D57D0046DE8F /* ConnectionDelegate.m in Sources */,
 				E3CDBF0213045AF40046DE8F /* ServicePanelDelegate.m in Sources */,
 				E3CDBF3313059FE20046DE8F /* ProjectDetailsPresetController.m in Sources */,
+				E3ACC279132A638700D2103E /* ProjectListPresetsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
